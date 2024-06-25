@@ -1,0 +1,7 @@
+name: GitHub Action Demo
+On: [ push ]
+jobs:
+    Explore-GitHub-Actions:
+        runs-on:Ubuntu-latest
+        Steps:
+            -run: echo "The job was autoatically triggered by a ${{github.event-name}} event."
