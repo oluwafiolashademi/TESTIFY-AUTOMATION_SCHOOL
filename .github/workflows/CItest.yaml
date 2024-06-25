@@ -4,6 +4,7 @@ jobs:
   Test:
     runs-on: Ubuntu-latest
     steps:
-      -uses: action/checkout@v2
-      - run: echo "The job was autoatically triggered by a ${{github.event-name}} event."
+      - uses: actions/checkout@v2
+      - run: echo "The job was autoatically triggered by a ${{ github.event_name }} event."
       - run: python Main.py
+      
