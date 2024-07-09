@@ -15,16 +15,3 @@ if (number % 2 === 0){
 else{
     console.log("This is an odd number!")
 }
-// Steps
-
-// Initialize a variable, number and assign it any number of your choice.
-
-// Write an if statement check if number is divisible by 2 (HINT: use the modulus operator)
-
-// Log the string number is even to the console if the number is divisible by 2
-
-// Add an else block
-
-// Inside the else block, log number is even to the console
-
-// You can test your code by assigning different values to the number variable in step 1 
