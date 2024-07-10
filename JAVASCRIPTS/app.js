@@ -2,6 +2,3 @@
 alert('Hello world!')
 
 
-
-
-

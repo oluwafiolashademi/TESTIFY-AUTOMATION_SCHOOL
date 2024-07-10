@@ -114,6 +114,57 @@ switch(day){
 
 
 
+//WHILE LOOP CONDITION
+// let star = 1 //starting point
+
+// while(star <= 10){
+//     console.log(star + ' star')
+//     star = star + 1
+// }
+
+let star = 1
+
+while(star <= 10){
+    if(star === 1){
+        console.log(star + ' star') 
+    }
+    else{
+        console.log(star + ' stars')
+    }
+    star = star + 1
+}
+
+
+
+
+
+//FOR LOOP CONDITION
+
+// for(let star = 0; star <= 10; star = star+1){
+//     console.log(star + ' star')
+// }
+
+// let star = 1
+
+// for(let star = 0; star <= 10; star = star+1){
+//     if(star === 1 || star === 0){
+//         console.log(star + ' star') 
+//     }
+//     else{
+//         console.log(star + ' stars')
+//     }
+// }
+
+let number = 1
+
+for(let number = 0; number <= 10; number = number+1){
+    if(number % 2 === 0){
+        console.log(number + ' is an even number') 
+    }
+    else{
+        console.log(number + ' is an odd number')
+    }
+}
 
 
 
