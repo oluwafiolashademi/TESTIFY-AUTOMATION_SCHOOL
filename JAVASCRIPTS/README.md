@@ -170,3 +170,124 @@ for(let number = 0; number <= 10; number = number+1){
 
 
 
+// Functions
+
+function MyFunction(){
+    console.log("My First Function")
+}
+MyFunction();
+
+function greeting(){
+    console.log("Good morning")
+}
+greeting();
+
+function greeting(name){
+    console.log("Good morning" + name);
+}
+greeting("Buchi");
+greeting(name);
+
+function addNumbers(firstNumber, secondNumber){
+    const sum = firstNumber + secondNumber;
+    console.log(sum);
+}
+addNumbers(30, 40);
+
+
+
+//Functions with return values
+function addNumbers(firstNumber, secondNumber){
+    const sum = firstNumber + secondNumber;
+    return sum;
+}
+console.log(addNumbers(30, 40));
+
+const moreOp = addNumbers(30, 40) + 20;
+console.log(moreOp);
+
+
+//How to return two values
+//Functions with return values
+function Numbers(firstNumber, secondNumber){
+    const sum = firstNumber + secondNumber;
+    const product = firstNumber * secondNumber;
+    return [sum, product];
+}
+console.log(Numbers(30, 40));
+
+
+//A function to converters currency
+function converter(dollar){
+    //convert to naira and return an equivalent dollar value
+    //conversion rate: 410 to 1 dollar
+
+    const naira = dollar * 410;
+    return naira;
+}
+const nairaValue = converter(100);
+console.log(nairaValue);
+
+
+
+
+// FUNCTIONS AND SCOPES
+//Global scope
+const myName = 'Folashade';
+
+function greet(){
+    console.log ("Good morning, " + "myName");
+}
+greet();
+
+//Function scope or local variable
+function greet(){
+    console.log ("Good morning, " + "myName");
+    function innerGreet(){
+        console.log ("Good evening, " + "myName");
+    }
+    innerGreet();
+}
+greet();
+
+
+
+// //Expressed function with wrong response
+// //Function Declaration
+// const myGreet = function greet(name)
+// {
+//     console.log ("Good morning, " + "myName");
+// };
+// greet(Nick);
+
+
+
+//Expressed function with right response
+const OurGreet = function(name)
+{
+    console.log ("Good morning, " + "myName");
+};
+greet(Nick);
+
+
+
+//Callback function 
+//Example 1
+function greetings(greet)
+{
+    greet();}
+    greetings(function(){
+        console.log ("Good morning, ");
+});
+    
+
+//Example 2
+function greetings(greet)
+{
+    greet();
+}
+    function Callback(){
+        console.log ("Good morning, ");
+}
+greetings(Callback);
+    
