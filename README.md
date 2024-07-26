@@ -1,5 +1,5 @@
-# CI-CD-PIPELINE
-Learning how to automate a CI/CD pipeline with GItHub and Jenkins
+# Testify Automation School
+Learning how to Automate Test processes
 
 # Table of content
 
