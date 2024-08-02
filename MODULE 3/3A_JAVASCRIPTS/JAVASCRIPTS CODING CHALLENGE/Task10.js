@@ -11,3 +11,4 @@ function filternegatives(numbers) {
   const numbers = [-5, 0, 7, -2, 10];
   const filteredNumbers = filternegatives(numbers);
   console.log(filteredNumbers); // Output: [0, 7, 10]
+
