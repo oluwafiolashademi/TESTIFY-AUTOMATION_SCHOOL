@@ -1,0 +1,512 @@
+Delivered-To: folashadeayorindeakinola@gmail.com
+Received: by 2002:a05:6358:590:b0:1aa:b237:93b5 with SMTP id h16csp630131rwj;
+        Sat, 10 Aug 2024 15:59:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGlOHe/tqRJMP9BDJppvjyrLYG3Sc/r3+pF7Z45N7W9PfFE513gSTQIiS2MP2RN22pTCSFN
+X-Received: by 2002:a05:6214:2d49:b0:6bb:98ba:7c4c with SMTP id 6a1803df08f44-6bd79b22f43mr92974366d6.5.1723330796606;
+        Sat, 10 Aug 2024 15:59:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1723330796; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NsK8Oua9E2VqzHxcErCXK+0+pD2SyOefhaqy2sogsx21SByB4BJ4hRvu7y1CuFNQiB
+         fYtluFSBz4XHpEhIYr2C1bn5TYDEufc06qOiopIu6FNEpp4miZ8zk/CErZeZz/4v0iUG
+         oA1HYPkLCxI1NjIQgdYvqYEYHkYK0pqY2PxMKduVyZ06HkutRRFxvHUBUFnnU2e6wwf6
+         t/vEeNNVDtShe68/hfI+92CKC803MPGmNf0O82IEe+sxc9hnckij8XspQpH3hpmCsojJ
+         yl/hcAB6axJ+vzBHSSb1m10gPZD9nFEIZz367eoEv39xTOCb3HHOMHhVe8a5YOSTodSP
+         lRvg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=nMaj9HrCxpDtLvXNLuUAVXKj43CADo7pt4q0Ptppz+o=;
+        fh=zCRonVgvv742zEPqASXYVUFdnBXJbgyvMZYQh9ZaBZ0=;
+        b=SSxuFoJWadVXDHl/Cfma0wc7hBRcEIK+O34tvdjIXki3oLRqzOMTiaqQUqXdSK52a3
+         LjTzN9VYaS2p9IPDTnQkQGyezdV4uFxXH+sjWuIOuN0XQRP9U1KF0fWU1WjQ6Bu4DtGR
+         Bw0R6BhdPTMuip1JBYGQLQChrBR5xeKi5B94Pw2rRjxZmoLOLX9mn/89JSFTlj5Bi0A9
+         pgR8lhX383AqfgrzZDwUetZiLUYwBApX+aiD80afLpae+xBd0TkqK1wC2Ajf9Q/vrleZ
+         utwkPWJS+6w6ifOX71bIUmrDrJGeCs4MNUwVhusxbSqxWtty7sgKZJELlJUYrpduW0zH
+         Wmug==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@getpostman.com header.s=s1 header.b=cgRVxamV;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=H290W9DV;
+       spf=pass (google.com: domain of bounces+3399158-10d8-folashadeayorindeakinola=gmail.com@mail.getpostman.com designates 167.89.76.141 as permitted sender) smtp.mailfrom="bounces+3399158-10d8-folashadeayorindeakinola=gmail.com@mail.getpostman.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=getpostman.com
+Return-Path: <bounces+3399158-10d8-folashadeayorindeakinola=gmail.com@mail.getpostman.com>
+Received: from o1.mail.getpostman.com (o1.mail.getpostman.com. [167.89.76.141])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6bd82e7eb14si28995956d6.510.2024.08.10.15.59.56
+        for <folashadeayorindeakinola@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 10 Aug 2024 15:59:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+3399158-10d8-folashadeayorindeakinola=gmail.com@mail.getpostman.com designates 167.89.76.141 as permitted sender) client-ip=167.89.76.141;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@getpostman.com header.s=s1 header.b=cgRVxamV;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=H290W9DV;
+       spf=pass (google.com: domain of bounces+3399158-10d8-folashadeayorindeakinola=gmail.com@mail.getpostman.com designates 167.89.76.141 as permitted sender) smtp.mailfrom="bounces+3399158-10d8-folashadeayorindeakinola=gmail.com@mail.getpostman.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=getpostman.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=getpostman.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=nMaj9HrCxpDtLvXNLuUAVXKj43CADo7pt4q0Ptppz+o=;
+	b=cgRVxamVSTtAQBO+68MO0RPngcXi91xENC09qI8/38p/7JNUNc1+bauemYr6niBNiJl3
+	OsSEcNSG2srjr2LtcPH8OiFOgELsWCIHJK0daFochEwHoGbMHqvq4jpoNNtlqHd5yomO6E
+	cw8M4mJYXTTnFWGpM+aPaFbApDnTV5NlLZuI3AXAGvyo5G5TuM84N1cfdYVOWuwhaVtT0r
+	SneyswCMKMLQR3mLOrg49Zo8FbYPp2zJpbsJVu/8Ek+8eHTs9m5EF7ZvMOkd6Q+XUtDgkG
+	HVguysc5jUW7WijExrQ4OQdimqV9FMxxJ/i6VO5Mm0RBXHVtLo/D19OSVpCWEczw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=nMaj9HrCxpDtLvXNLuUAVXKj43CADo7pt4q0Ptppz+o=;
+	b=H290W9DVwlGflq6OYDlCIAFHLX+TTM6+NDbK9eu8NzKYv36wYYvuL8hCthptMuXOsu78
+	0kb3lhVAMSohx5BaUrRBlcgS1TYjWyUbsKTFmmpq6CidjnoTkUNvhM5K7/DzapQha9PsWW
+	x5gXJPb/65T66Isr6ODmKEftJwyGfJAcE=
+Received: by recvd-5d5cb78558-27t67 with SMTP id recvd-5d5cb78558-27t67-1-66B7F0EC-B
+	2024-08-10 22:59:56.166793643 +0000 UTC m=+1042813.342119043
+Received: from MzM5OTE1OA (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id wT-jJdcvRJS86G-V6oe3Uw
+	Sat, 10 Aug 2024 22:59:56.159 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Sat, 10 Aug 2024 22:59:56 +0000 (UTC)
+From: Postman Monitors <noreply@notifications.getpostman.com>
+Mime-Version: 1.0
+Message-ID: <wT-jJdcvRJS86G-V6oe3Uw@geopod-ismtpd-17>
+Subject: Errors in the monitor - 3BAPITEST
+X-Feedback-ID: 3399158:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Exejsooai3Lp5EMIeP6vpKEC3tZf0NAabDNV7SlwCOZmnokxGzFECLxBBc?=
+ =?us-ascii?Q?0AMafKnxUlgidgnnxJBX9Y5NrWLBJvkeDX3QY9=2F?=
+ =?us-ascii?Q?NPbs+hra4lojiSx9okOU9yFgnj6y08Gqrkk2mDX?=
+ =?us-ascii?Q?tfaxALO5=2FeYRNIyd9lN+eVFMSqrdur217480GIH?=
+ =?us-ascii?Q?=2FmeCilEoXSsmXYTSr2A12K=2FUoBYKG1EtbJbk2+S?=
+ =?us-ascii?Q?QKuTKBNNhJHBUGIgqP9L2RSf6pHplQO3E6mIN1r?=
+ =?us-ascii?Q?GdsI1b7YSKhB6iHBQBH=2F=2FEBQRcatEl76nLND33O?=
+ =?us-ascii?Q?Xqy=2FV+yg=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BhuYKRBP+z+ZamylOUSOMmKLTTTglkV2oG=2Fe5?=
+ =?us-ascii?Q?rFVbrM8O4CKkcUsz0QqSnuvPzOrCWmVR=2F0rYQtw?=
+ =?us-ascii?Q?j0fliYY6PrEDMgnh5otKROm9HJjPrIJnWjz+JZg?=
+ =?us-ascii?Q?D3NIcK4=2FIklCNfA=3D=3D?=
+To: folashadeayorindeakinola@gmail.com
+X-Entity-ID: u001.03/ozVTk+Fzlgjb/Lp80ug==
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang=3D"en" xmlns=3D"ht=
+tp://www.w3.org/1999/xhtml"><head><meta content=3D"text/html; charset=3DUTF=
+-8" http-equiv=3D"Content-Type"><title>Errors in the monitor - 3BAPITEST</t=
+itle><meta content=3D"width=3Ddevice-width,initial-scale=3D1" name=3D"viewp=
+ort"><meta name=3D"x-apple-disable-message-reformatting"><style type=3D"tex=
+t/css">a[x-apple-data-detectors]{color:inherit!important;text-decoration:no=
+ne!important;font-size:inherit!important;font-family:inherit!important;font=
+-weight:inherit!important;line-height:inherit!important}</style><!--[if !ms=
+o]><!--><link href=3D"https://fonts.googleapis.com/css?family=3DInter" rel=
+=3D"stylesheet" type=3D"text/css"><link href=3D"https://fonts.googleapis.co=
+m/css?family=3DIBM+Plex+Mono" rel=3D"stylesheet" type=3D"text/css"><style t=
+ype=3D"text/css">@import url(https://fonts.googleapis.com/css?family=3DInte=
+r);@import url(https://fonts.googleapis.com/css?family=3DIBM+Plex+Mono);</s=
+tyle><!--<![endif]--><!--[if mso]><xml><o:OfficeDocumentSettings><o:AllowPN=
+G/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><s=
+tyle type=3D"text/css">.ct{word-break: break-all !important;}</style><![end=
+if]--><style type=3D"text/css">p,td{font-family:Inter,system-ui,-apple-syst=
+em,Segoe UI,Roboto,Ubuntu,Arial,sans-serif}.L{color:#0265d2;text-decoration=
+:none!important}body{margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-t=
+ext-size-adjust:100%;-webkit-font-smoothing:antialiased}table,td{border-col=
+lapse:collapse;mso-table-lspace:0;mso-table-rspace:0}</style></head><body s=
+tyle=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-fon=
+t-smoothing:antialiased;margin:0;padding:0"><center><div style=3D"max-width=
+:600px;margin:0"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"mso-table-lspace:0;mso-table-rspace:0;width:600px;m=
+in-width:600px;max-width:600px;border-collapse:collapse;border:1px solid #e=
+2e2e2" width=3D"600" bgcolor=3D"white"><tr><td style=3D"font-family:Inter,s=
+ystem-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-colla=
+pse:collapse;mso-table-lspace:0;mso-table-rspace:0;line-height:0;font-size:=
+0;mso-line-height-rule:exactly"><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"598" bgcolor=
+=3D"white" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-r=
+space:0"><tr><div style=3D"display:none;font-size:1px;color:#fff;line-heigh=
+t:1px;max-height:0;max-width:0;width:0;height:0;opacity:0;overflow:hidden">=
+Act now to solve the issues in their early stage.</div></tr><tr><td style=
+=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,=
+sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;p=
+adding:48px 48px 0 48px"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" bgcolor=3D"wh=
+ite" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:=
+0"><tr><td align=3D"left" style=3D"font-family:Inter,system-ui,-apple-syste=
+m,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-tabl=
+e-lspace:0;mso-table-rspace:0;font-size:0;word-break:break-word"><a href=3D=
+"https://links.getpostman.com/ls/click?upn=3Du001.F5oWY2bDM9VsP1yDsg8sV-2Bh=
+rGj6WJlcx3kd-2FRNSB5TAgMUYPIaUsEak5hZJBLivDPXkP_iw7FQtIkBcYuAHIS4JqsSR5QwgA=
+aRwPG0zdOTZ9cd-2Fj-2FbjI09wo-2F70MraSN9tMaRGR71Mej0O8BMvXM1xerXUut7uj-2Fl0O=
+gU97uZkHAu4hLSeBX5sID7xW2H3c-2BI15okOI4-2FN3uHnbYcOhfYk-2BJoddU1Ou5sklmdOJY=
+nyU-2ByQaW5Rtgn1uT-2Bg3FEZUwKRCTK4gsNssIkS6VXAaljUUNAJu35lDJH7XSmo4XYplxlUW=
+d6LtjD8jx-2B-2FbVvyJvZK0vEqyWR6TSl213BBjIe5j-2FCyhy6GICujiP-2FqBpn3Bz6igIfp=
+IstJWUyD-2BOFcoAB-2FqiGdIXYXDFVVw-2BNMZ66pnETyvIsC2vOQNOvIWvh7Nwi-2Fbw-3D" =
+target=3D"_blank"><img width=3D"142" src=3D"https://skills-assets.pstmn.io/=
+email-assets/monitoring/postman-logo.png" style=3D"border:0;display:block;o=
+utline:0;text-decoration:none;height:auto"></a></td></tr><tr><td style=3D"f=
+ont-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-=
+serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;paddin=
+g-top:32px"><div style=3D"word-break:break-word;font-family:Inter,Segoe UI,=
+Roboto,Arial,verdana,geneva,sans-serif;font-size:20px;font-style:normal;fon=
+t-weight:600;line-height:24px;text-align:left;letter-spacing:-.56px">Housto=
+n, we have a problem</div><div class=3D"ct" style=3D"word-break:break-word;=
+word-wrap:break-word;overflow:hidden;padding-top:8px!important;font-family:=
+Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:14px;font-s=
+tyle:normal;line-height:22px;text-align:left">3 requests in the 3BAPITEST c=
+ollection could not be tested across 1 region during the monitor run. For m=
+ore information, go to monitor run and review the console log.</div></td></=
+tr><tr><td align=3D"center" style=3D"font-family:Inter,system-ui,-apple-sys=
+tem,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-ta=
+ble-lspace:0;mso-table-rspace:0;direction:ltr;font-size:0;padding-top:32px"=
+><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"498" style=3D"border-collapse:collapse;mso-ta=
+ble-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr><td style=3D"font-f=
+amily:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif=
+;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;border-top:=
+1px solid #ededed;direction:ltr;font-size:0;text-align:center;width:498px" =
+width=3D"498" align=3D"center"><div style=3D"font-size:0;text-align:left;di=
+rection:ltr;display:inline-block;vertical-align:middle;width:498px!importan=
+t" width=3D"498"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"498" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr><td align=3D"left" s=
+tyle=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Ar=
+ial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace=
+:0;font-size:0;padding:6px 8px;word-break:break-word;vertical-align:middle;=
+width:249px" valign=3D"middle" width=3D"249"><div style=3D"font-family:Inte=
+r,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:12px;font-style=
+:normal;font-weight:600;line-height:16px;text-align:left;color:#6b6b6b">Mon=
+itor</div></td><td align=3D"left" style=3D"font-family:Inter,system-ui,-app=
+le-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;=
+mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px 8px;word-brea=
+k:break-word;vertical-align:middle;width:249px" valign=3D"middle" width=3D"=
+249"><div style=3D"word-break:break-all;word-wrap:break-word;overflow:hidde=
+n;font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-si=
+ze:12px;font-style:normal;font-weight:400;line-height:16px;text-align:left;=
+color:#000"><a class=3D"L" href=3D"https://links.getpostman.com/ls/click?up=
+n=3Du001.F5oWY2bDM9VsP1yDsg8sV1tZ3ZjcjUPst5v9sWXhYI1l2iwbdOvRb-2BfTX84RLuCV=
+1XV3tF3TBSPF2bqHBDhR4RE1wkA6M1k7nEEYzJNazZYJcAmrFdPZAbEw-2Ff3qVEeHpHRuSyr4m=
+RxUQ7WfGNmoYX2PUom2QFJKlvX8IHvNDg5HJQ7tjk9EqCKiRpH-2BoB9CVINhIXDxTtD90JOUov=
+3FHg-3D-3DVam7_iw7FQtIkBcYuAHIS4JqsSR5QwgAaRwPG0zdOTZ9cd-2Fj-2FbjI09wo-2F70=
+MraSN9tMaRGR71Mej0O8BMvXM1xerXUut7uj-2Fl0OgU97uZkHAu4hLSeBX5sID7xW2H3c-2BI1=
+5okOI4-2FN3uHnbYcOhfYk-2BJoddU1Ou5sklmdOJYnyU-2ByQaU4haIWY3JUnomrPNoM3ufZTV=
+Oa5Lu7Nn4iF1Kyu5hsz3vSTW7xwZpuTiH5x-2FyCq7idAET0Xlq16Lsh7Rv4R8STGJTFsr6-2BT=
+gN64AjFy7LLQd-2BtvBBHIfGj3fIiiY5sxd6MF24wVUdQ16icg8sB90KoMLVQD4Z7AoFYUcq3qi=
+misJSISvZCYnER1duArkUhuQY-3D" style=3D"color:#0265d2;text-decoration:none">=
+3BAPITEST</a></div></td></tr></tbody></table></div></td></tr><tr><td style=
+=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,=
+sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;b=
+order-top:1px solid #ededed;direction:ltr;font-size:0;padding:0;text-align:=
+center;width:498px" width=3D"498" align=3D"center"><div style=3D"font-size:=
+0;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;=
+width:498px!important" width=3D"498"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" width=3D"498" style=3D"border-colla=
+pse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr>=
+<td align=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe=
+ UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspac=
+e:0;mso-table-rspace:0;font-size:0;padding:6px 8px;word-break:break-word;ve=
+rtical-align:middle;width:249px" valign=3D"middle" width=3D"249"><div style=
+=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-=
+size:12px;font-style:normal;font-weight:600;line-height:16px;text-align:lef=
+t;color:#6b6b6b">Collection</div></td><td align=3D"left" style=3D"font-fami=
+ly:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;bo=
+rder-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;pa=
+dding:6px 8px;word-break:break-word;vertical-align:middle;width:249px" vali=
+gn=3D"middle" width=3D"249"><div style=3D"word-break:break-all;word-wrap:br=
+eak-word;overflow:hidden;font-family:Inter,Segoe UI,Roboto,Arial,verdana,ge=
+neva,sans-serif;font-size:12px;font-style:normal;font-weight:400;line-heigh=
+t:16px;text-align:left;color:#000"><a href=3D"https://links.getpostman.com/=
+ls/click?upn=3Du001.F5oWY2bDM9VsP1yDsg8sVwIE-2F0aP0AOd3TQKfBTkbXEkU9SFICYL4=
+f-2B-2FfPpl7Vp-2FdnRkevblyRGnW8sX1LJLSAvvdn-2FvMMl79P12WN2O3pmsu4h-2BVRdfRR=
+ahQsFwrewclzF0_iw7FQtIkBcYuAHIS4JqsSR5QwgAaRwPG0zdOTZ9cd-2Fj-2FbjI09wo-2F70=
+MraSN9tMaRGR71Mej0O8BMvXM1xerXUut7uj-2Fl0OgU97uZkHAu4hLSeBX5sID7xW2H3c-2BI1=
+5okOI4-2FN3uHnbYcOhfYk-2BJoddU1Ou5sklmdOJYnyU-2ByQaXFu62L86TeSl4sUirC-2BzCb=
+24ulsIx9fR-2BKaS10n0m19oS9EAN5WFZTv8pzbU18RmlisjMpAADO-2FjQcHbHS-2FudTmwZ1q=
+enlbmOGPe30KYrmu6xPPsH0xBvvIOs-2Bq4A6T32WwMqRvUhtv9dZeBIvmtYPAAfkuVraITP7Yc=
+jg6PeHXl62WK14Vn1PazBp4jgHuRM-3D" class=3D"L" style=3D"color:#0265d2;text-d=
+ecoration:none">3BAPITEST</a></div></td></tr></tbody></table></div></td></t=
+r><tr><td style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Robot=
+o,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-t=
+able-rspace:0;border-top:1px solid #ededed;direction:ltr;font-size:0;paddin=
+g:0;text-align:center;width:498px" width=3D"498" align=3D"center"><div styl=
+e=3D"font-size:0;text-align:left;direction:ltr;display:inline-block;vertica=
+l-align:middle;width:498px!important" width=3D"498"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"498" style=
+=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:49=
+8px"><tbody><tr><td align=3D"left" style=3D"font-family:Inter,system-ui,-ap=
+ple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse=
+;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px 8px;word-bre=
+ak:break-word;vertical-align:middle;width:249px" valign=3D"middle" width=3D=
+"249"><div style=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,=
+sans-serif;font-size:12px;font-style:normal;font-weight:600;line-height:16p=
+x;text-align:left;color:#6b6b6b">Environment</div></td><td align=3D"left" s=
+tyle=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Ar=
+ial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace=
+:0;font-size:0;padding:6px 8px;word-break:break-word;vertical-align:middle;=
+width:249px" valign=3D"middle" width=3D"249"><div style=3D"word-break:break=
+-all;word-wrap:break-word;overflow:hidden;font-family:Inter,Segoe UI,Roboto=
+,Arial,verdana,geneva,sans-serif;font-size:12px;font-style:normal;font-weig=
+ht:400;line-height:16px;text-align:left;color:#000"><span style=3D"color:#5=
+b5b5b">None</span></div></td></tr></tbody></table></div></td></tr><tr><td s=
+tyle=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Ar=
+ial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace=
+:0;border-top:1px solid #ededed;direction:ltr;font-size:0;padding:0;text-al=
+ign:center;width:498px" width=3D"498" align=3D"center"><div style=3D"font-s=
+ize:0;text-align:left;direction:ltr;display:inline-block;vertical-align:mid=
+dle;width:498px!important" width=3D"498"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" width=3D"498" style=3D"border-c=
+ollapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:498px"><tbody>=
+<tr><td align=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,S=
+egoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-l=
+space:0;mso-table-rspace:0;font-size:0;padding:6px 8px;word-break:break-wor=
+d;vertical-align:middle;width:249px" valign=3D"middle" width=3D"249"><div s=
+tyle=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;f=
+ont-size:12px;font-style:normal;font-weight:600;line-height:16px;text-align=
+:left;color:#6b6b6b">Workspace</div></td><td align=3D"left" style=3D"font-f=
+amily:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif=
+;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0=
+;padding:6px 8px;word-break:break-word;vertical-align:middle;width:249px" v=
+align=3D"middle" width=3D"249"><div style=3D"word-break:break-all;word-wrap=
+:break-word;overflow:hidden;font-family:Inter,Segoe UI,Roboto,Arial,verdana=
+,geneva,sans-serif;font-size:12px;font-style:normal;font-weight:400;line-he=
+ight:16px;text-align:left;color:#000"><a href=3D"https://links.getpostman.c=
+om/ls/click?upn=3Du001.F5oWY2bDM9VsP1yDsg8sV-2FFzG75a0TDhOImmQ4dmU-2BagLb5u=
+ELr8jDApXRFiH8HClE2U9mLDiqVrOYpKozzJTpoeIzKTzZM8ktBmiIzTQt8-3D4OaK_iw7FQtIk=
+BcYuAHIS4JqsSR5QwgAaRwPG0zdOTZ9cd-2Fj-2FbjI09wo-2F70MraSN9tMaRGR71Mej0O8BMv=
+XM1xerXUut7uj-2Fl0OgU97uZkHAu4hLSeBX5sID7xW2H3c-2BI15okOI4-2FN3uHnbYcOhfYk-=
+2BJoddU1Ou5sklmdOJYnyU-2ByQaXB0FnBrp58fuWNJPsJPRp5ruBHvGuAaBq-2BL-2BT1-2Fc6=
+Hka8Sj6efOTgJDW6KfUtYTVBO-2Fq9GXT-2F90arxUzmIaJcLJ9Qcc4xwyElPRX4qYxHEn8mUIr=
+tTlWjslv7qKh2e2DnzzFl1Mv0dfbi5GzftvozTO-2FM6PHA3ZfJI1ZliRXvzqK0THR95DXOBAQH=
+dnTEuY00-3D" class=3D"L" style=3D"color:#0265d2;text-decoration:none">TESTI=
+FY</a></div></td></tr></tbody></table></div></td></tr><tr><td style=3D"font=
+-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-ser=
+if;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;border-to=
+p:1px solid #ededed;border-bottom:1px solid #ededed;direction:ltr;font-size=
+:0;padding:0;text-align:center;width:498px" width=3D"498" align=3D"center">=
+<div style=3D"font-size:0;text-align:left;direction:ltr;display:inline-bloc=
+k;vertical-align:middle;width:498px!important" width=3D"498"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"4=
+98" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0=
+;width:498px"><tbody><tr><td align=3D"left" style=3D"font-family:Inter,syst=
+em-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse=
+:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px 8px=
+;word-break:break-word;vertical-align:middle;width:249px" valign=3D"middle"=
+ width=3D"249"><div style=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdan=
+a,geneva,sans-serif;font-size:12px;font-style:normal;font-weight:600;line-h=
+eight:16px;text-align:left;color:#6b6b6b">Error recorded at</div></td><td a=
+lign=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,R=
+oboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;m=
+so-table-rspace:0;font-size:0;padding:6px 8px;word-break:break-word;vertica=
+l-align:middle;width:249px" valign=3D"middle" width=3D"249"><div style=3D"f=
+ont-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:=
+12px;font-style:normal;font-weight:400;line-height:16px;text-align:left;col=
+or:#000">10:&zwnj;59 PM UTC 10 Aug 2024</div></td></tr></tbody></table></di=
+v></td></tr></tbody></table></td></tr><tr><td style=3D"font-family:Inter,sy=
+stem-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collap=
+se:collapse;mso-table-lspace:0;mso-table-rspace:0;direction:ltr;font-size:0=
+;padding:0;text-align:center" align=3D"center"><!--[if mso | IE]><table rol=
+e=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td=
+ style=3D"vertical-align:middle;width:502px;"><![endif]--><div class=3D"mj-=
+column-per-100 mj-outlook-group-fix" style=3D"font-size:0;text-align:left;d=
+irection:ltr;display:inline-block;vertical-align:middle;width:100%"><table =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" widt=
+h=3D"100%" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-r=
+space:0"><tbody><tr><td style=3D"font-family:Inter,system-ui,-apple-system,=
+Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-=
+lspace:0;mso-table-rspace:0;vertical-align:middle;padding:0" valign=3D"midd=
+le"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" width=3D"100%" style=3D"border-collapse:collapse;mso-table-lspace:0;=
+mso-table-rspace:0"><tbody><tr><td align=3D"left" style=3D"font-family:Inte=
+r,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-co=
+llapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:2=
+4px 0 13px 0;word-break:break-word" vertical-align=3D"middle"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;border-collapse:separate;line-height:1=
+00%"><tr><td align=3D"center" bgcolor=3D"#FF6C37" role=3D"presentation" sty=
+le=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Aria=
+l,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0=
+;border:none;border-radius:3px;cursor:auto;font-style:normal;mso-padding-al=
+t:6px 16px 6px 16px;background:#ff6c37" valign=3D"middle"><a href=3D"https:=
+//links.getpostman.com/ls/click?upn=3Du001.F5oWY2bDM9VsP1yDsg8sV1tZ3ZjcjUPs=
+t5v9sWXhYI1l2iwbdOvRb-2BfTX84RLuCV1XV3tF3TBSPF2bqHBDhR4d0max-2BFdTAG56Q-2Fq=
+AFRVRvBQ9WViYsF7H0tU-2Fe1GiTpIUu0N4DPGuFB9CoRO77fN14XZeLIDEMfa-2FwWKLssmvgk=
+h3YBmXMrTZdapDmCWPL-2B0SzWu0CtqtFxL9zYme5n9y-2B9xwOFz5aq2AzbjpKhZ1U-2BZBKGR=
+Kd2dWy16K3TFQWszlWDWQGNFG-2B0iTZTL7daKA-3D-3DYCgX_iw7FQtIkBcYuAHIS4JqsSR5Qw=
+gAaRwPG0zdOTZ9cd-2Fj-2FbjI09wo-2F70MraSN9tMaRGR71Mej0O8BMvXM1xerXUut7uj-2Fl=
+0OgU97uZkHAu4hLSeBX5sID7xW2H3c-2BI15okOI4-2FN3uHnbYcOhfYk-2BJoddU1Ou5sklmdO=
+JYnyU-2ByQaWX3-2BoBH2-2BbAAtFiJ6vkb6v-2B5oKn3zqKBQVfup6PJ8SHnG92pa8Q72HEFCY=
+gXxbmeBGm8539rhDCQlJ-2Fb7vt7-2FVgpSyHkm2OYUUFhVpBuZG-2F8Xd4INTzM1-2F7AJI7PU=
+RjpDLeP4Jf7KP3DpIFUnYvBa3Nuo3rZu-2FROPQvkPKVI7Uuk0NUEQXgKjlV9dK5-2FglroE-3D=
+" style=3D"display:inline-block;background:#ff6c37;color:#fff;font-family:I=
+nter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:12px;font-st=
+yle:normal;font-weight:600;line-height:20px;margin:0;text-decoration:none;t=
+ext-transform:none;padding:6px 16px 6px 16px;mso-padding-alt:0;border-radiu=
+s:3px" target=3D"_blank">View Run Results</a></td></tr></table></td></tr></=
+tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr><=
+/table><![endif]--></td></tr></table></td></tr></table></td></tr><tr align=
+=3D"center" valign=3D"middle"><td width=3D"598" align=3D"center" valign=3D"=
+middle" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,=
+Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-tab=
+le-rspace:0;line-height:0;font-size:0;mso-line-height-rule:exactly;max-widt=
+h:598px;width:598px"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;max-width:598px;width:598px;border-collapse:collapse" width=3D=
+"598"><tr><td style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,R=
+oboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;m=
+so-table-rspace:0;line-height:0;font-size:0;mso-line-height-rule:exactly"><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"598" bgcolor=3D"white" style=3D"border-collapse=
+:collapse;mso-table-lspace:0;mso-table-rspace:0"><tr><td style=3D"font-fami=
+ly:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;bo=
+rder-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding:0 48px=
+ 48px 48px"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" width=3D"100%" bgcolor=3D"white" style=3D"b=
+order-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0"><tbody><tr a=
+lign=3D"left" valign=3D"middle"><td style=3D"font-family:Inter,system-ui,-a=
+pple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collaps=
+e;mso-table-lspace:0;mso-table-rspace:0;width:498px;padding-top:11px;direct=
+ion:ltr;text-align:left;max-width:498px" width=3D"498" align=3D"left"><div =
+style=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;=
+font-size:16px;font-style:normal;font-weight:600;line-height:20px;letter-sp=
+acing:-.12px;text-align:left">Last run summary</div></td></tr><tr><td align=
+=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Robot=
+o,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-t=
+able-rspace:0;direction:ltr;font-size:0;padding:16px 0 16px 0"><div style=
+=3D"color:#6b6b6b;font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sa=
+ns-serif;font-size:14px;font-style:normal;font-weight:400;line-height:22px;=
+text-align:left">There were <span style=3D"font-weight:600">4 errors</span>=
+ across <span style=3D"font-weight:600">1 region</span>.</div></td></tr><tr=
+><td align=3D"center" bgcolor=3D"#ffffff" style=3D"font-family:Inter,system=
+-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:c=
+ollapse;mso-table-lspace:0;mso-table-rspace:0;direction:ltr;font-size:0;pad=
+ding:7px"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" width=3D"484" style=3D"border-collapse:collap=
+se;mso-table-lspace:0;mso-table-rspace:0;border-top:1px solid #e6e6e6;width=
+:484px"><tbody><tr align=3D"left" valign=3D"middle" style=3D"font-size:0"><=
+td align=3D"center" style=3D"border-collapse:collapse;mso-table-lspace:0;ms=
+o-table-rspace:0;color:#444;text-align:center;padding:2px;font-family:'IBM =
+Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:=
+10px;line-height:16px;direction:ltr;min-width:16px;max-width:45px" width=3D=
+"2%" bgcolor=3D"#ffffff">1</td><td align=3D"center" style=3D"border-collaps=
+e:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#212121;text-align:c=
+enter;padding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,v=
+erdana,geneva,sans-serif;font-size:10px;line-height:16px;width:65px;directi=
+on:ltr;max-width:65px" width=3D"65" bgcolor=3D"#f9f9f9">22:&zwnj;59:&zwnj;5=
+4</td><td align=3D"left" style=3D"border-collapse:collapse;mso-table-lspace=
+:0;mso-table-rspace:0;color:#212121;padding:2px 2px 2px 4px;font-family:'IB=
+M Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-bre=
+ak:break-all;word-wrap:break-word;overflow:hidden;font-size:10px;line-heigh=
+t:16px;text-align:left;direction:ltr;width:378px;max-width:378px" width=3D"=
+378">3B_Task3</td></tr></tbody></table><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"484" st=
+yle=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width=
+:484px"><tbody><tr align=3D"left" valign=3D"middle" style=3D"font-size:0"><=
+td align=3D"center" style=3D"border-collapse:collapse;mso-table-lspace:0;ms=
+o-table-rspace:0;color:#444;text-align:center;padding:2px;font-family:'IBM =
+Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:=
+10px;line-height:16px;direction:ltr;min-width:16px;max-width:45px" width=3D=
+"2%" bgcolor=3D"#ffffff">2</td><td align=3D"center" style=3D"border-collaps=
+e:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#212121;text-align:c=
+enter;padding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,v=
+erdana,geneva,sans-serif;font-size:10px;line-height:16px;width:65px;directi=
+on:ltr;max-width:65px" width=3D"65" bgcolor=3D"#f9f9f9">22:&zwnj;59:&zwnj;5=
+4</td><td align=3D"left" style=3D"border-collapse:collapse;mso-table-lspace=
+:0;mso-table-rspace:0;color:#212121;padding:2px 2px 2px 4px;font-family:'IB=
+M Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-bre=
+ak:break-all;word-wrap:break-word;overflow:hidden;font-size:10px;line-heigh=
+t:16px;text-align:left;direction:ltr;width:378px;max-width:378px" width=3D"=
+378">GET http:&zwnj;//{{baseurl}}books/</td></tr></tbody></table><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" width=3D"484" style=3D"border-collapse:collapse;mso-table-lspace:=
+0;mso-table-rspace:0;width:484px"><tbody><tr align=3D"left" valign=3D"middl=
+e" style=3D"font-size:0"><td align=3D"center" style=3D"border-collapse:coll=
+apse;mso-table-lspace:0;mso-table-rspace:0;color:#444;text-align:center;pad=
+ding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,ge=
+neva,sans-serif;font-size:10px;line-height:16px;direction:ltr;min-width:16p=
+x;max-width:45px" width=3D"2%" bgcolor=3D"#ffffff">3</td><td align=3D"cente=
+r" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;=
+color:#212121;text-align:center;padding:2px;font-family:'IBM Plex Mono',Int=
+er,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;line-heig=
+ht:16px;width:65px;direction:ltr;max-width:65px" width=3D"65" bgcolor=3D"#f=
+9f9f9">22:&zwnj;59:&zwnj;54</td><td align=3D"left" style=3D"border-collapse=
+:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#b70700;padding:2px 2=
+px 2px 4px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,=
+geneva,sans-serif;word-break:break-all;word-wrap:break-word;overflow:hidden=
+;font-size:10px;line-height:16px;text-align:left;direction:ltr;width:378px;=
+max-width:378px" width=3D"378">Error:&zwnj; getaddrinfo ENOTFOUND {{baseurl=
+}}books</td></tr></tbody></table><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"484" style=3D=
+"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:484px=
+"><tbody><tr align=3D"left" valign=3D"middle" style=3D"font-size:0"><td ali=
+gn=3D"center" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-tabl=
+e-rspace:0;color:#444;text-align:center;padding:2px;font-family:'IBM Plex M=
+ono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;l=
+ine-height:16px;direction:ltr;min-width:16px;max-width:45px" width=3D"2%" b=
+gcolor=3D"#ffffff">4</td><td align=3D"center" style=3D"border-collapse:coll=
+apse;mso-table-lspace:0;mso-table-rspace:0;color:#212121;text-align:center;=
+padding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana=
+,geneva,sans-serif;font-size:10px;line-height:16px;width:65px;direction:ltr=
+;max-width:65px" width=3D"65" bgcolor=3D"#f9f9f9">22:&zwnj;59:&zwnj;54</td>=
+<td align=3D"left" style=3D"border-collapse:collapse;mso-table-lspace:0;mso=
+-table-rspace:0;color:#b70700;padding:2px 2px 2px 4px;font-family:'IBM Plex=
+ Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-break:bre=
+ak-all;word-wrap:break-word;overflow:hidden;font-size:10px;line-height:16px=
+;text-align:left;direction:ltr;width:378px;max-width:378px" width=3D"378">J=
+SONError:&zwnj; Unexpected token u in JSON at position 0</td></tr></tbody><=
+/table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"484" style=3D"border-collapse:collaps=
+e;mso-table-lspace:0;mso-table-rspace:0;border-bottom:1px solid #e6e6e6;wid=
+th:484px"><tbody><tr align=3D"left" valign=3D"middle" style=3D"font-size:0"=
+><td align=3D"center" style=3D"border-collapse:collapse;mso-table-lspace:0;=
+mso-table-rspace:0;color:#444;text-align:center;padding:2px;font-family:'IB=
+M Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-siz=
+e:10px;line-height:16px;direction:ltr;min-width:16px;max-width:45px" width=
+=3D"2%" bgcolor=3D"#ffffff">5</td><td align=3D"center" style=3D"border-coll=
+apse:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#212121;text-alig=
+n:center;padding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Aria=
+l,verdana,geneva,sans-serif;font-size:10px;line-height:16px;width:65px;dire=
+ction:ltr;max-width:65px" width=3D"65" bgcolor=3D"#f9f9f9">22:&zwnj;59:&zwn=
+j;54</td><td align=3D"left" style=3D"border-collapse:collapse;mso-table-lsp=
+ace:0;mso-table-rspace:0;color:#b70700;padding:2px 2px 2px 4px;font-family:=
+'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-=
+break:break-all;word-wrap:break-word;overflow:hidden;font-size:10px;line-he=
+ight:16px;text-align:left;direction:ltr;width:378px;max-width:378px" width=
+=3D"378">JSONError:&zwnj; Unexpected token u in JSON at position 0</td></tr=
+></tbody></table></td></tr><tr><td align=3D"left" style=3D"font-family:Inte=
+r,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-co=
+llapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:0=
+;word-break:break-word"><div style=3D"padding-top:32px;font-family:Inter,Se=
+goe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:11px;font-style:nor=
+mal;font-weight:400;line-height:18px;text-align:left;color:#6b6b6b">This em=
+ail was sent to folashadeayorindeakinola@gmail.&zwnj;com, which is associat=
+ed with a Postman account.</div></td></tr><tr><td align=3D"center" style=3D=
+"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,san=
+s-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font=
+-size:0;padding:18px 0 15px 0;word-break:break-word"><p style=3D"font-famil=
+y:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;bor=
+der-top:solid 2px #ededed;font-size:1px;margin:0 auto;width:100%"></p><!--[=
+if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"border-top:solid 2px #EDEDED;font-size:1px;margin:0px a=
+uto;width:502px;" role=3D"presentation" width=3D"502px"><tr><td style=3D"he=
+ight:0;line-height:0;">&nbsp;</td></tr></table><![endif]--></td></tr><tr><t=
+d align=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe U=
+I,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:=
+0;mso-table-rspace:0;font-size:0;padding:0;word-break:break-word"><div styl=
+e=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font=
+-size:11px;font-style:normal;font-weight:400;line-height:18px;text-align:le=
+ft;color:#a6a6a6">=A9 2024 Postman Inc. All Rights Reserved<br>201 Mission =
+Street, Suite 2375, San Francisco, CA 94105</div><div style=3D"display:none=
+;font-size:1px;color:#fff;line-height:1px;max-height:0;max-width:0;width:0;=
+height:0;opacity:0;overflow:hidden">MONITOR ID: 1ef576c3-d2d5-4400-961c-7d9=
+d75d89a0f</div><div style=3D"display:none;font-size:1px;color:#fff;line-hei=
+ght:1px;max-height:0;max-width:0;width:0;height:0;opacity:0;overflow:hidden=
+">JOB ID: 1ef576c4-0e9b-4fc0-8d26-7cd1b8b9258f</div></td></tr></tbody></tab=
+le></td></tr></table></td></tr></table></td></tr></table></div></center><im=
+g src=3D"https://links.getpostman.com/wf/open?upn=3Du001.nwMKjVL2-2Bje9NE2F=
+ls2wwtNBG-2FrmCZB7aBpoUoPAUckxdupbsphCBoGhwK1fn1-2B2IYnaT0I29-2FkI-2F8zg5ZQ=
+jZO-2BeDk0yZI-2BJPU2sp7n6LBQD3iMmMHQ4xDewteE5NEQUhBX4w8xKWq6sm-2BCIC0CgZv8W=
+yfoxeZFTUKN41Y9ltn4lenF3Bn-2BiOw7GQAt-2FjStHyQqcrXSzyQCaPEQFpq24KRuhPNV-2BI=
+7iq-2BR-2Fumlzgydh8EekakAYkrPMHS-2Fck3uriw1Ppyd-2FM8I9zr4s-2BMTx7nDYDYk5aH-=
+2B5cz3gQeNQ6CyFz5NsfFa33lyeOQgDt1kmKcDfpMeOebmH08XNM8GyNwfOn6U-2F7j9PbANFMO=
+aKQcKo-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1=
+px !important;width:1px !important;border-width:0 !important;margin-top:0 !=
+important;margin-bottom:0 !important;margin-right:0 !important;margin-left:=
+0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-r=
+ight:0 !important;padding-left:0 !important;"/></body></html>
