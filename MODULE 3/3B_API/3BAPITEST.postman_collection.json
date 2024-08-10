@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "e8eba48f-db4d-443e-94dd-d8aaf9752ce5",
+		"name": "3BAPITEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34733865"
+	},
+	"item": [
+		{
+			"name": "Task2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    });\r",
+							"\r",
+							"pm.test(\"status code is ok\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    });\r",
+							"\r",
+							"// pm.test(\"Response status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"\r",
+							"// pm.test(\"status code is ok\", function () {\r",
+							"//     pm.response.to.have.status(\"OK\");\r",
+							"// });\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"// {\r",
+							"//   \"info\": {\r",
+							"//     \"name\": \"Slack API Tests\",\r",
+							"//     \"_postman_id\": \"b9a02c79-2b33-4b75-a1ae-dfbd3c3d6e73\"\r",
+							"//   },\r",
+							"//   \"item\": [\r",
+							"//     {\r",
+							"//       \"name\": \"GET Requests\",\r",
+							"//       \"item\": [\r",
+							"//         {\r",
+							"//           \"name\": \"GET Request\",\r",
+							"//           \"event\": [\r",
+							"//             {\r",
+							"//               \"listen\": \"test\",\r",
+							"//               \"script\": {\r",
+							"//                 \"exec\": [\r",
+							"//                   \"pm.test(\\\"Status code is 200\\\", function () {\",\r",
+							"//                   \"    pm.response.to.have.status(200);\",\r",
+							"//                   \"});\"\r",
+							"//                 ],\r",
+							"//                 \"type\": \"text/javascript\"\r",
+							"//               }\r",
+							"//             }\r",
+							"//           ],\r",
+							"//           \"request\": {\r",
+							"//             \"method\": \"GET\",\r",
+							"//             \"url\": \"https://testifyacademy.slack.com/archives/C078ZS3JC6L/p1722719467737319\"\r",
+							"//           }\r",
+							"//         }\r",
+							"//       ]\r",
+							"//     },\r",
+							"//     {\r",
+							"//       \"name\": \"POST Requests\",\r",
+							"//       \"item\": [\r",
+							"//         {\r",
+							"//           \"name\": \"POST Request\",\r",
+							"//           \"event\": [\r",
+							"//             {\r",
+							"//               \"listen\": \"test\",\r",
+							"//               \"script\": {\r",
+							"//                 \"exec\": [\r",
+							"//                   \"pm.test(\\\"Status code is 201\\\", function () {\",\r",
+							"//                   \"    pm.response.to.have.status(201);\",\r",
+							"//                   \"});\"\r",
+							"//                 ],\r",
+							"//                 \"type\": \"text/javascript\"\r",
+							"//               }\r",
+							"//             }\r",
+							"//           ],\r",
+							"//           \"request\": {\r",
+							"//             \"method\": \"POST\",\r",
+							"//             \"url\": \"https://testifyacademy.slack.com/archives/C078ZS3JC6L/p1722719467737319\"\r",
+							"//           }\r",
+							"//         }\r",
+							"//       ]\r",
+							"//     },\r",
+							"//     {\r",
+							"//       \"name\": \"DELETE Requests\",\r",
+							"//       \"item\": [\r",
+							"//         {\r",
+							"//           \"name\": \"DELETE Request\",\r",
+							"//           \"event\": [\r",
+							"//             {\r",
+							"//               \"listen\": \"test\",\r",
+							"//               \"script\": {\r",
+							"//                 \"exec\": [\r",
+							"//                   \"pm.test(\\\"Status code is 204\\\", function () {\",\r",
+							"//                   \"    pm.response.to.have.status(204);\",\r",
+							"//                   \"});\"\r",
+							"//                 ],\r",
+							"//                 \"type\": \"text/javascript\"\r",
+							"//               }\r",
+							"//             }\r",
+							"//           ],\r",
+							"//           \"request\": {\r",
+							"//             \"method\": \"DELETE\",\r",
+							"//             \"url\": \"https://testifyacademy.slack.com/archives/C078ZS3JC6L/p1722719467737319\"\r",
+							"//           }\r",
+							"//         }\r",
+							"//       ]\r",
+							"//     }\r",
+							"//   ]\r",
+							"// }"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/"
+			},
+			"response": []
+		},
+		{
+			"name": "Task2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"\tpm.response.to.have.status(201);\r",
+							"\t});\r",
+							"\r",
+							"pm.test(\"Response status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Ayorinde\",\r\n   \"clientEmail\": \"ayorindeakinola@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/api-clients/"
+			},
+			"response": []
+		},
+		{
+			"name": "Task2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"DELETE requests should return 204 No Content\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{Token}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //\"orderId\": \"ddQTxHMzLsuI_vg3w3hB2\"\r\n    \"bookId\": 5\r\n    //\"id\": \"0ox_yonv2nkafDs_j9552\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders/:orderId",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "0ox_yonv2nkafDs_j9552"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task2 Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Fixed syntax \r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{Token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 5,\r\n  \"customerName\": \"Emmanuel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/orders/"
+			},
+			"response": []
+		},
+		{
+			"name": "Task2 Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{Token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://simple-books-api.glitch.me/orders/"
+			},
+			"response": []
+		}
+	]
+}
