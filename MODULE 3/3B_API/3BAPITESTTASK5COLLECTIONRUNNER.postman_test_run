@@ -1,0 +1,288 @@
+{
+	"id": "1f0db3ac-e089-4d09-892f-0ac265c8d850",
+	"name": "3BAPITEST",
+	"timestamp": "2024-08-10T22:56:35.273Z",
+	"collection_id": "34733865-e8eba48f-db4d-443e-94dd-d8aaf9752ce5",
+	"folder_id": 0,
+	"environment_id": "34733865-68b90cc9-4701-47f8-8edd-edd49e61a8fe",
+	"totalPass": 7,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-08-10T22:56:30.276Z",
+	"totalFail": 4,
+	"results": [
+		{
+			"id": "4a26cafc-a52e-44a9-b30a-4dd297f0232f",
+			"name": "Task2",
+			"url": "https://simple-books-api.glitch.me/",
+			"time": 1303,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"status code is ok": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"status code is ok": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1303
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"status code is ok": true
+				}
+			]
+		},
+		{
+			"id": "f644c6e1-3b22-48f6-9b20-e3fb8df162c9",
+			"name": "Task2",
+			"url": "https://simple-books-api.glitch.me/api-clients/",
+			"time": 280,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Status code is 201": false,
+				"Response status code is 201": false
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response status code is 201": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				280
+			],
+			"allTests": [
+				{
+					"Status code is 201": false,
+					"Response status code is 201": false
+				}
+			]
+		},
+		{
+			"id": "013815c2-0f9e-484d-bb49-425ab659809f",
+			"name": "Task2",
+			"url": "https://simple-books-api.glitch.me/orders/0ox_yonv2nkafDs_j9552",
+			"time": 317,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"DELETE requests should return 204 No Content": false,
+				"Response status code is 204": false
+			},
+			"testPassFailCounts": {
+				"DELETE requests should return 204 No Content": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response status code is 204": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				317
+			],
+			"allTests": [
+				{
+					"DELETE requests should return 204 No Content": false,
+					"Response status code is 204": false
+				}
+			]
+		},
+		{
+			"id": "7556b463-cdfb-4ce4-a054-6e30d7b612f7",
+			"name": "Task2 Order",
+			"url": "https://simple-books-api.glitch.me/orders/",
+			"time": 304,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				304
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "77f9e1dc-c3bd-4f46-8b88-81080baced5d",
+			"name": "Task2 Order",
+			"url": "https://simple-books-api.glitch.me/orders/",
+			"time": 315,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				315
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "5ecfd65b-3b75-48a0-b6ac-99864f822544",
+			"name": "3B_Task3",
+			"url": "https://simple-books-api.glitch.me/books/",
+			"time": 320,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"verify the name of a non-fiction book named Untamed": true
+			},
+			"testPassFailCounts": {
+				"verify the name of a non-fiction book named Untamed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				320
+			],
+			"allTests": [
+				{
+					"verify the name of a non-fiction book named Untamed": true
+				}
+			]
+		},
+		{
+			"id": "31e93867-1624-4cd2-8d92-927e65e529dd",
+			"name": "3B_Task4",
+			"url": "https://simple-books-api.glitch.me/books/",
+			"time": 329,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Extract the book ID with the name the Russians": true
+			},
+			"testPassFailCounts": {
+				"Extract the book ID with the name the Russians": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				329
+			],
+			"allTests": [
+				{
+					"Extract the book ID with the name the Russians": true
+				}
+			]
+		},
+		{
+			"id": "44c3c651-6119-4dea-912a-a1fcd47055a7",
+			"name": "3B_Task4",
+			"url": "https://simple-books-api.glitch.me/books/orders/",
+			"time": 427,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Place an order with book ID named the Russians": true
+			},
+			"testPassFailCounts": {
+				"Place an order with book ID named the Russians": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				427
+			],
+			"allTests": [
+				{
+					"Place an order with book ID named the Russians": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3595,
+	"collection": {
+		"requests": [
+			{
+				"id": "4a26cafc-a52e-44a9-b30a-4dd297f0232f",
+				"method": "GET"
+			},
+			{
+				"id": "f644c6e1-3b22-48f6-9b20-e3fb8df162c9",
+				"method": "POST"
+			},
+			{
+				"id": "013815c2-0f9e-484d-bb49-425ab659809f",
+				"method": "DELETE"
+			},
+			{
+				"id": "7556b463-cdfb-4ce4-a054-6e30d7b612f7",
+				"method": "POST"
+			},
+			{
+				"id": "77f9e1dc-c3bd-4f46-8b88-81080baced5d",
+				"method": "GET"
+			},
+			{
+				"id": "5ecfd65b-3b75-48a0-b6ac-99864f822544",
+				"method": "GET"
+			},
+			{
+				"id": "31e93867-1624-4cd2-8d92-927e65e529dd",
+				"method": "GET"
+			},
+			{
+				"id": "44c3c651-6119-4dea-912a-a1fcd47055a7",
+				"method": "POST"
+			}
+		]
+	}
+}
