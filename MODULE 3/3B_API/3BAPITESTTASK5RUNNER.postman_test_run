@@ -1,0 +1,401 @@
+{
+	"id": "692ce362-1f5b-4b07-b1a8-abcbbb7e012a",
+	"name": "3BAPITEST",
+	"timestamp": "2024-08-11T21:17:43.532Z",
+	"collection_id": "34733865-e8eba48f-db4d-443e-94dd-d8aaf9752ce5",
+	"folder_id": 0,
+	"environment_id": "34733865-68b90cc9-4701-47f8-8edd-edd49e61a8fe",
+	"totalPass": 60,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-08-11T21:17:25.139Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "4a26cafc-a52e-44a9-b30a-4dd297f0232f",
+			"name": "Task2",
+			"url": "https://simple-books-api.glitch.me/",
+			"time": 646,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"status code is ok": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 5,
+					"fail": 0
+				},
+				"status code is ok": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				1593,
+				583,
+				537,
+				618,
+				646
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"status code is ok": true
+				},
+				{
+					"Status code is 200": true,
+					"status code is ok": true
+				},
+				{
+					"Status code is 200": true,
+					"status code is ok": true
+				},
+				{
+					"Status code is 200": true,
+					"status code is ok": true
+				},
+				{
+					"Status code is 200": true,
+					"status code is ok": true
+				}
+			]
+		},
+		{
+			"id": "7556b463-cdfb-4ce4-a054-6e30d7b612f7",
+			"name": "Task2 Order",
+			"url": "https://simple-books-api.glitch.me/orders/",
+			"time": 428,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code name has string": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				545,
+				511,
+				818,
+				551,
+				428
+			],
+			"allTests": [
+				{
+					"Status code name has string": true
+				},
+				{
+					"Status code name has string": true
+				},
+				{
+					"Status code name has string": true
+				},
+				{
+					"Status code name has string": true
+				},
+				{
+					"Status code name has string": true
+				}
+			]
+		},
+		{
+			"id": "77f9e1dc-c3bd-4f46-8b88-81080baced5d",
+			"name": "Task2 Order",
+			"url": "https://simple-books-api.glitch.me/orders/",
+			"time": 300,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				737,
+				468,
+				290,
+				356,
+				300
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "013815c2-0f9e-484d-bb49-425ab659809f",
+			"name": "Task2",
+			"url": "https://simple-books-api.glitch.me/orders/:Qf1vCqyAUCkAUVLZq03lh",
+			"time": 474,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"DELETE requests should return 204 No Content": true,
+				"Response status code is 204": true
+			},
+			"testPassFailCounts": {
+				"DELETE requests should return 204 No Content": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response status code is 204": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				352,
+				450,
+				334,
+				401,
+				474
+			],
+			"allTests": [
+				{
+					"DELETE requests should return 204 No Content": true,
+					"Response status code is 204": true
+				},
+				{
+					"DELETE requests should return 204 No Content": true,
+					"Response status code is 204": true
+				},
+				{
+					"DELETE requests should return 204 No Content": true,
+					"Response status code is 204": true
+				},
+				{
+					"DELETE requests should return 204 No Content": true,
+					"Response status code is 204": true
+				},
+				{
+					"DELETE requests should return 204 No Content": true,
+					"Response status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "5ecfd65b-3b75-48a0-b6ac-99864f822544",
+			"name": "3B_Task3",
+			"url": "https://simple-books-api.glitch.me/books/",
+			"time": 255,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"verify the name of a non-fiction book named Untamed": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"verify the name of a non-fiction book named Untamed": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				241,
+				333,
+				249,
+				261,
+				255
+			],
+			"allTests": [
+				{
+					"verify the name of a non-fiction book named Untamed": true,
+					"Status code is 200": true
+				},
+				{
+					"verify the name of a non-fiction book named Untamed": true,
+					"Status code is 200": true
+				},
+				{
+					"verify the name of a non-fiction book named Untamed": true,
+					"Status code is 200": true
+				},
+				{
+					"verify the name of a non-fiction book named Untamed": true,
+					"Status code is 200": true
+				},
+				{
+					"verify the name of a non-fiction book named Untamed": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "31e93867-1624-4cd2-8d92-927e65e529dd",
+			"name": "3B_Task4",
+			"url": "https://simple-books-api.glitch.me/books/",
+			"time": 288,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Extract the book ID with the name the Russian": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Extract the book ID with the name the Russian": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				246,
+				313,
+				302,
+				253,
+				288
+			],
+			"allTests": [
+				{
+					"Extract the book ID with the name the Russian": true,
+					"Status code is 200": true
+				},
+				{
+					"Extract the book ID with the name the Russian": true,
+					"Status code is 200": true
+				},
+				{
+					"Extract the book ID with the name the Russian": true,
+					"Status code is 200": true
+				},
+				{
+					"Extract the book ID with the name the Russian": true,
+					"Status code is 200": true
+				},
+				{
+					"Extract the book ID with the name the Russian": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "44c3c651-6119-4dea-912a-a1fcd47055a7",
+			"name": "3B_Task4",
+			"url": "https://simple-books-api.glitch.me/books/orders/",
+			"time": 304,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Place an order with book ID named the Russians": true,
+				"Response status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Place an order with book ID named the Russians": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response status code is 404": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				238,
+				251,
+				329,
+				331,
+				304
+			],
+			"allTests": [
+				{
+					"Place an order with book ID named the Russians": true,
+					"Response status code is 404": true
+				},
+				{
+					"Place an order with book ID named the Russians": true,
+					"Response status code is 404": true
+				},
+				{
+					"Place an order with book ID named the Russians": true,
+					"Response status code is 404": true
+				},
+				{
+					"Place an order with book ID named the Russians": true,
+					"Response status code is 404": true
+				},
+				{
+					"Place an order with book ID named the Russians": true,
+					"Response status code is 404": true
+				}
+			]
+		}
+	],
+	"count": 5,
+	"totalTime": 15186,
+	"collection": {
+		"requests": [
+			{
+				"id": "4a26cafc-a52e-44a9-b30a-4dd297f0232f",
+				"method": "GET"
+			},
+			{
+				"id": "7556b463-cdfb-4ce4-a054-6e30d7b612f7",
+				"method": "POST"
+			},
+			{
+				"id": "77f9e1dc-c3bd-4f46-8b88-81080baced5d",
+				"method": "GET"
+			},
+			{
+				"id": "013815c2-0f9e-484d-bb49-425ab659809f",
+				"method": "DELETE"
+			},
+			{
+				"id": "5ecfd65b-3b75-48a0-b6ac-99864f822544",
+				"method": "GET"
+			},
+			{
+				"id": "31e93867-1624-4cd2-8d92-927e65e529dd",
+				"method": "GET"
+			},
+			{
+				"id": "44c3c651-6119-4dea-912a-a1fcd47055a7",
+				"method": "POST"
+			}
+		]
+	}
+}
