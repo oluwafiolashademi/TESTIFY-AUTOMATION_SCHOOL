@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "e8eba48f-db4d-443e-94dd-d8aaf9752ce5",
+		"name": "3BAPITEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34733865"
+	},
+	"item": [
+		{
+			"name": "Task2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    });\r",
+							"\r",
+							"pm.test(\"status code is ok\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    });\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/"
+			},
+			"response": []
+		},
+		{
+			"name": "Task2 Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Fixed syntax \r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"// Save the orderId from the POST response\r",
+							"pm.environment.set(\"orderId\", pm.response.json().orderId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{Token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 6,\r\n  \"customerName\": \"Abigeal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://simple-books-api.glitch.me/orders/"
+			},
+			"response": []
+		},
+		{
+			"name": "Task2 Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{Token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://simple-books-api.glitch.me/orders/"
+			},
+			"response": []
+		},
+		{
+			"name": "Task2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"DELETE requests should return 204 No Content\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"// Save the authorization ID to change as DELETE post changes\r",
+							"// pm.test(\"Valid authorization ID is present in the response\", function () {\r",
+							"//     pm.expect(pm.response.headers.has('authorization-id')).to.be.true;\r",
+							"//     pm.environment.set(\"authorizationId\", pm.response.headers.get('authorization-id'));\r",
+							"// });"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Use the orderId saved in the environment\r",
+							"pm.request.url.path[1] = pm.environment.get(\"orderId\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{Token}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     //\"orderId\": \"ddQTxHMzLsuI_vg3w3hB2\"\r\n//     \"bookId\": 6\r\n//     //\"id\": \"0ox_yonv2nkafDs_j9552\"\r\n//     }\r\n// {\r\n//   \"bookId\": 6,\r\n//   \"customerName\": \"Abigeal\"\r\n// }\r\n\r\n{\r\n  \"orderId\": \"{{orderId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders/:{{orderId}}",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders",
+						":{{orderId}}"
+					],
+					"variable": [
+						{
+							"key": "{{orderId}}",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3B_Task3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var untamedBook = pm.response.json();\r",
+							"\r",
+							"pm.test(\"verify the name of a non-fiction book named Untamed\", function () {\r",
+							"  pm.expect(untamedBook.find(book => book.name === 'Untamed'));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "cfd724e72fd68f77263594754d5eebc8b87af5b7aa3bba92d2a6f2db64cc5eb1"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}books/"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "orderId",
+			"value": "RHepUJgoyTtiQI5PQxvC4"
+		}
+	]
+}
