@@ -18,8 +18,8 @@
 
 const side1 = 1, side2 = 2, side3 = 2;
 
-if (side1 === side2 === side3){
-    console.log("This is an Equilateral triangle")
+if (side1 === side2 && side2 === side3){
+    console.log("This is an Equilateral triangle")s
 }
 else if (side1 === side2 || side1 === side3 || side2 === side3){
     console.log("This is an Isosceles triangle ")
