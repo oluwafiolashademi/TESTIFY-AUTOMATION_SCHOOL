@@ -15,4 +15,3 @@ const position = today.getDay() + 1;
 const output = "Today is " + day + ". It is the " + position + (position === 1 ? "st" : position === 2 ? "nd" : position === 3 ? "rd" : "th") + " day of the week.";
 
 console.log(output);
-
