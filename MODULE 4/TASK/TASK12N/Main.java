@@ -11,6 +11,7 @@ public class Main {
 
         // Accessing Class B
         classB bObject = new classB();
-        bObject.newName();
+        //bObject.newName();
+        bObject.callNewName();
     }
 }
