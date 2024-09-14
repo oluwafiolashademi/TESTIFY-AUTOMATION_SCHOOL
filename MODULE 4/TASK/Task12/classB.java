@@ -1,7 +1,7 @@
 package Task12;
 
 public class classB {
-    public void newName() {
+    private void newName() {
         System.out.println("My new name is now Folashade Ayorinde-Akinola");
     }
 
