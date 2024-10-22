@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="DemoQATests">
+    <test name="Base Test">
+        <classes>
+            <class name="Task17.BaseTest"/>
+        </classes>
+    </test>
+    <test name="Elements Test">
+        <classes>
+            <class name="Task17.ElementsTest"/>
+        </classes>
+    </test>
+    <test name="Forms Test">
+        <classes>
+            <class name="Task17.FormsTest"/>
+        </classes>
+    </test>
+    <test name="Widgets Test">
+        <classes>
+            <class name="Task17.InteractionsTest"/>
+        </classes>
+    </test>
+    <test name="Interactions Test">
+        <classes>
+            <class name="Task17.WidgetTest"/>
+        </classes>
+    </test>
+</suite>
