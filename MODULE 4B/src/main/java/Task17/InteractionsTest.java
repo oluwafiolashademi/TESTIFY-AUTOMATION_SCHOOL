@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class InteractionsTest extends BaseTest {
-    @Test
+    @Test(priority = 3, groups = {"Home Page"})
     public void testNavigateToInteractions() {
         driver.get("https://demoqa.com/");
         WebElement interaction = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[5]/div/div[3]/h5"));

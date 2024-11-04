@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" verbose="1">
+    <test name="Homepage Tests">
+        <classes>
+            <class name="Task17.ElementsTest"/>
+            <class name="Task17.FormsTest"/>
+            <class name="Task17.InteractionsTest"/>
+            <class name="Task17.WidgetTest"/>
+            <class name="Task18.OrderItemTest"/>
+        </classes>
+    </test>
+</suite>

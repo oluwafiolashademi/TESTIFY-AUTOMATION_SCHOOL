@@ -21,22 +21,26 @@ public class OrderItemTest {
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
         Thread.sleep(3000);
+    }
 
+    @Test(priority = 5, groups = {"Home Page"})
+    public void Login() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.getUsername().sendKeys("standard_user");
         loginPage.getPassword().sendKeys("secret_sauce");
         Thread.sleep(3000);
         loginPage.getLogin().click();
         Thread.sleep(5000);
+    }
 
+    public void Product() throws InterruptedException {
         ProductPage productPage = new ProductPage(driver);
         productPage.getAddtocart().click();
         productPage.getCart().click();
         Thread.sleep(5000);
+    }
 
-        // Assert items in cart
-//        CartPage cartPage = new CartPage(driver);
-//        assertEquals(cartPage.getBackPacks(), "Sauce Labs Backpack");
+    public void Cart() throws InterruptedException {
         // Assert items in cart
         CartPage cartPage = new CartPage(driver);
         String actualItem = cartPage.getBackPacks().getText(); // Get the text from WebElement
@@ -47,7 +51,9 @@ public class OrderItemTest {
         CartPage cartPage1 = new CartPage(driver);
         cartPage1.getCheckoutbtn().click();
         Thread.sleep(3000);
+    }
 
+    public void Checkout() throws InterruptedException {
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.getFirstName().sendKeys("Folashade");
         checkoutPage.getLastName().sendKeys("Ayorinde_Akinola");
