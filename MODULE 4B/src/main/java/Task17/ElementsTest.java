@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class ElementsTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1, groups = {"Home Page"})
     public void testNavigateToElements() {
         driver.get("https://demoqa.com/");
         WebElement element = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[3]/h5"));

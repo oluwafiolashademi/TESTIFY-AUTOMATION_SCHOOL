@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 
 public class WidgetTest extends BaseTest {
-    @Test
+    @Test(priority = 4, groups = {"Home Page"})
     public void testNavigateToWidget() {
         driver.get("https://demoqa.com/");
         WebElement Widget = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]/div/div[3]/h5"));
