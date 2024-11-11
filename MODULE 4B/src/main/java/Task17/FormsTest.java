@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FormsTest extends BaseTest {
-    @Test
+    @Test(priority = 2, groups = {"Home Page"})
     public void testNavigateToForms() {
         driver.get("https://demoqa.com/");
         WebElement form = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]/div/div[3]/h5"));
